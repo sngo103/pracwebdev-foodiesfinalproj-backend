@@ -1,10 +1,8 @@
-# starter-server
+# pracwebdev-foodiesfinalproj-backend
 
-Starter code for the backend of our final CRUD app
+#### Server-Side Code for Practical Web Dev Final Project
 
 To start:
-
 `npm run dev`
 
-Download Postgres and Postman. # pracwebdev-foodiesfinalproj-backend
-# pracwebdev-foodiesfinalproj-backend
+*Download Postgres and Postman.
