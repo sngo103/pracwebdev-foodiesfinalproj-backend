@@ -1,16 +1,15 @@
 const Sequelize = require('sequelize');
 const db = require('../db');
 
-//I added this model, not sure if i was supposed to add email, image, and gpa in const student
-const Students = {
-  student: {
-    firstName: "Gabby",
-    lastName: "Gonzalez",
-    email: "Gabriella.gonzalez90@myhunter.cuny.edu",
-    imageUrl: null,  //need default photo here
-    gpa: "4.0" 
-  }
-}
+/*
+  - [x] Write a `students` model with the following information:
+  - [x] firstName - not empty or null
+  - [x] lastName - not empty or null
+  - [x] email - not empty or null; must be a valid email
+  - [x] imageUrl - with a default value
+  - [x] gpa - decimal between 0.0 and 4.0
+*/
+
 const Student = db.define("student", {
 
   firstname: {
@@ -22,22 +21,29 @@ const Student = db.define("student", {
     type: Sequelize.STRING,
     allowNull: false
   }, 
-  /*
-  I added these but not sure if its right?? 
-
+  
+  //I added these but not sure if its right?? 
   email: {
     type: Sequelize.STRING,
     allowNull: false
   },
+  //GPA in range 0.0-4.0
   gpa: {
-    type: Sequelize.STRING,
-    allowNull: false
+    type: Sequelize.DOUBLE,
+    allowNull: false,
+    defaultValue: 0.0, //if a student hasnt taken any classes 
+    validate: {
+        min: 0.0,
+        max: 4.0
+    }
   },
   imageUrl: {
     type: Sequelize.STRING,
-    allowNull: false
+    allowNull: false,
+    defaultValue: "http://s3.amazonaws.com/37assets/svn/765-default-avatar.png" 
   }
-*/
+
 });
+
 
 module.exports = Student;
