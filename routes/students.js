@@ -22,7 +22,9 @@ const ash = require('express-async-handler');
 //   }
 // });
 
-/** GET ALL STUDENTS: express-async-handler (ash) */
+/** GET ALL STUDENTS: express-async-handler (ash) 
+ * [x] Write a route to serve up all students
+*/
 // automatically catches any error and sends to middleware
 // same as using try/catch and calling next(error)
 router.get('/', ash(async(req, res) => {
@@ -36,14 +38,18 @@ router.get('/:id', ash(async(req, res) => {
   res.status(200).json(student);
 }));
 
-/** ADD NEW STUDENT */
+/** ADD NEW STUDENT 
+ *  [x] Write a route to add a new student
+*/
 router.post('/', function(req, res, next) {
   Student.create(req.body)
     .then(createdStudent => res.status(200).json(createdStudent))
     .catch(err => next(err));
 });
 
-/** DELETE STUDENT */
+/** DELETE STUDENT 
+ * - [x] Write a route to remove a student (based on their id)
+*/
 router.delete('/:id', function(req, res, next) {
   Student.destroy({
     where: {
