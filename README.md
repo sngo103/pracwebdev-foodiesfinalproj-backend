@@ -30,13 +30,13 @@ To start:
 - Backend (Express and Sequelize)
   - [x] Write a route to add a new campus
   - [x] Write a route to add a new student
+  - [ ] 
 *Removing a Campus and Removing a Student (10/57)*
 - Backend (Express and Sequelize)
   - [x] Write a route to remove a campus (based on its id)
   - [x] Write a route to remove a student (based on their id)
 
-##### COMPLETED BY: tbd
-Single Student and Single Campus (14/57)
+*Single Student and Single Campus (14/57)*
 Backend (Express and Sequelize)
-- [ ] Write a route to serve up a single campus (based on its id), _including that campuses' students_
-- [ ] Write a route to serve up a single student (based on their id), _including that student's campus_
+- [x] Write a route to serve up a single campus (based on its id), _including that campuses' students_
+- [x] Write a route to serve up a single student (based on their id), _including that student's campus_
